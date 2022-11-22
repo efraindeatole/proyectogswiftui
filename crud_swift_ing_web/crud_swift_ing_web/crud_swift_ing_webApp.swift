@@ -16,5 +16,6 @@ struct crud_swift_ing_webApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+        
     }
 }
