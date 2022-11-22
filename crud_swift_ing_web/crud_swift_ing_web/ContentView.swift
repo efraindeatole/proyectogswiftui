@@ -8,8 +8,10 @@
 import SwiftUI
 import CoreData
 
+
+
 struct ContentView: View {
-    let coreDM: crud_swift_ing_webApp
+    let coreDM: ManejadorCoreData
     @State var clv_obra = ""
     @State var clv_viga = ""
     @State var longitud = ""
@@ -21,7 +23,7 @@ struct ContentView: View {
     @State var newmaterial = ""
     @State var newpeso = ""
     @State var seleccionado: crud_swift_ing_webApp?
-    @State var prodArray = [crud_swift_ing_webApp]()
+    @State var vigaArray = [crud_swift_ing_webApp]()
 
 
     var body: some View {
@@ -44,7 +46,23 @@ struct ContentView: View {
                     Text("Agregar")
                 }
 
-                
+                List{
+                    ForEach(vigaArray, id: \.self){
+                        Viga in
+                        VStack{
+                            Text(Viga.clv_viga ?? "")
+                        }
+                        .onTapGesture{
+                            seleccionado = prod
+                            codigo = prod.idmob ?? ""
+                        }
+                    }.onDelete(perform: {
+                        indexSet in
+                        indexSet.forEach({ index in
+                        let viga = vigaArray[index]
+                            coreDM.borrarMobiliaria(mobiliaria: producto)
+                        mostrarProductos()
+                        })
                     })
                 }.padding()
                     .onAppear(perform: {mostrarProductos()})

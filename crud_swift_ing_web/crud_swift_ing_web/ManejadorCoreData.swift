@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import CoreData
+
+class ManejadorCoreData{
+    let persistentContainer: NSPersistentContainer
+
+    init(){
+        persistentContainer = NSPersistentContainer(name: "Viga")
+        persistentContainer.loadPersistentStores(completionHandler:{
+            (descripcion, error) in
+            if let error = error {
+                fatalError("Core data failed \(error.localizedDescription)")
+            }
+        })
+    }
+}
