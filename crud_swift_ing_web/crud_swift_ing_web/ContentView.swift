@@ -10,6 +10,7 @@ import CoreData
 
 
 
+
 struct ContentView: View {
     let coreDM: ManejadorCoreData
     @State var clv_obra = ""
@@ -22,8 +23,8 @@ struct ContentView: View {
     @State var newlongitud = ""
     @State var newmaterial = ""
     @State var newpeso = ""
-    @State var seleccionado: crud_swift_ing_webApp?
-    @State var vigaArray = [crud_swift_ing_webApp]()
+    @State var seleccionado: Viga?
+    @State var vigaArray = [Viga]()
 
 
     var body: some View {
@@ -37,30 +38,31 @@ struct ContentView: View {
                     TextField("peso", text: self.$newpeso).multilineTextAlignment(.center)
 
                     Button("Guardar"){
-                        coreDM.guardarMobilaria(clv_obra:newclv_obra, clv_viga: newclv_viga, longitud: newlongitud,material:newmaterial,peso:newpeso)
+                        coreDM.guardarViga(clv_obra:newclv_obra, clv_viga: newclv_viga, longitud: newlongitud,material:newmaterial,peso:newpeso)
                         newclv_obra=""
                         
                         mostrarProductos()
                     }
-                    }){
+                    })
+                {
                     Text("Agregar")
                 }
 
                 List{
-                    ForEach(vigaArray, id: \.self){
-                        Viga in
+                    ForEach(vigaArray,id:\.self){
+                        Vigas in
                         VStack{
-                            Text(Viga.clv_viga ?? "")
+                            Text(Vigas.clv_viga ?? "")
                         }
                         .onTapGesture{
-                            seleccionado = prod
-                            codigo = prod.idmob ?? ""
+                            seleccionado = Vigas
+                            clv_viga = Vigas.clv_viga ?? ""
                         }
                     }.onDelete(perform: {
                         indexSet in
                         indexSet.forEach({ index in
-                        let viga = vigaArray[index]
-                            coreDM.borrarMobiliaria(mobiliaria: producto)
+                        let vigaz = vigaArray[index]
+                            coreDM.borrarViga(Viga: vigaz)
                         mostrarProductos()
                         })
                     })
@@ -70,12 +72,11 @@ struct ContentView: View {
         }
     }
     func mostrarProductos(){
-            prodArray = coreDM.leerTodosLosProductos()
+        vigaArray = coreDM.leerTodasLasVigas()
         }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(coreDM: CoreDataManager())
+        ContentView(coreDM: ManejadorCoreData())
     }
 }

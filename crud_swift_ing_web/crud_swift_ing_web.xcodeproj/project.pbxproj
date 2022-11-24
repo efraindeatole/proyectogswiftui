@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD9F1319292FD0FD00A22DCE /* Vigas.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD9F1317292FD0FD00A22DCE /* Vigas.xcdatamodeld */; };
 		CDC6942829269DD500DAC719 /* crud_swift_ing_webApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6942729269DD500DAC719 /* crud_swift_ing_webApp.swift */; };
 		CDC6942A29269DD500DAC719 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6942929269DD500DAC719 /* ContentView.swift */; };
 		CDC6942C29269DD600DAC719 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC6942B29269DD600DAC719 /* Assets.xcassets */; };
 		CDC6942F29269DD600DAC719 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC6942E29269DD600DAC719 /* Preview Assets.xcassets */; };
 		CDC6943129269DD600DAC719 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6943029269DD600DAC719 /* Persistence.swift */; };
-		CDC6943429269DD600DAC719 /* viga.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDC6943229269DD600DAC719 /* viga.xcdatamodeld */; };
 		CDFC6DC7292D2FCC00F3B3EA /* ManejadorCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFC6DC6292D2FCC00F3B3EA /* ManejadorCoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD9F1318292FD0FD00A22DCE /* Vigas.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vigas.xcdatamodel; sourceTree = "<group>"; };
 		CDC6942429269DD500DAC719 /* crud_swift_ing_web.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crud_swift_ing_web.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC6942729269DD500DAC719 /* crud_swift_ing_webApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crud_swift_ing_webApp.swift; sourceTree = "<group>"; };
 		CDC6942929269DD500DAC719 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CDC6942B29269DD600DAC719 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDC6942E29269DD600DAC719 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CDC6943029269DD600DAC719 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		CDC6943329269DD600DAC719 /* crud_swift_ing_web.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = crud_swift_ing_web.xcdatamodel; sourceTree = "<group>"; };
 		CDFC6DC6292D2FCC00F3B3EA /* ManejadorCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManejadorCoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +41,7 @@
 		CDC6941B29269DD500DAC719 = {
 			isa = PBXGroup;
 			children = (
+				CD9F1317292FD0FD00A22DCE /* Vigas.xcdatamodeld */,
 				CDC6942629269DD500DAC719 /* crud_swift_ing_web */,
 				CDC6942529269DD500DAC719 /* Products */,
 			);
@@ -62,7 +63,6 @@
 				CDC6942929269DD500DAC719 /* ContentView.swift */,
 				CDC6942B29269DD600DAC719 /* Assets.xcassets */,
 				CDC6943029269DD600DAC719 /* Persistence.swift */,
-				CDC6943229269DD600DAC719 /* viga.xcdatamodeld */,
 				CDC6942D29269DD600DAC719 /* Preview Content */,
 			);
 			path = crud_swift_ing_web;
@@ -150,7 +150,7 @@
 				CDC6942A29269DD500DAC719 /* ContentView.swift in Sources */,
 				CDFC6DC7292D2FCC00F3B3EA /* ManejadorCoreData.swift in Sources */,
 				CDC6942829269DD500DAC719 /* crud_swift_ing_webApp.swift in Sources */,
-				CDC6943429269DD600DAC719 /* viga.xcdatamodeld in Sources */,
+				CD9F1319292FD0FD00A22DCE /* Vigas.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,13 +353,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		CDC6943229269DD600DAC719 /* viga.xcdatamodeld */ = {
+		CD9F1317292FD0FD00A22DCE /* Vigas.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				CDC6943329269DD600DAC719 /* crud_swift_ing_web.xcdatamodel */,
+				CD9F1318292FD0FD00A22DCE /* Vigas.xcdatamodel */,
 			);
-			currentVersion = CDC6943329269DD600DAC719 /* crud_swift_ing_web.xcdatamodel */;
-			path = viga.xcdatamodeld;
+			currentVersion = CD9F1318292FD0FD00A22DCE /* Vigas.xcdatamodel */;
+			path = Vigas.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

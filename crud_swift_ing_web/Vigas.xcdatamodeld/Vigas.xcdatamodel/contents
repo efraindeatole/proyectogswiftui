@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Viga" representedClassName="Viga" syncable="YES" codeGenerationType="class">
+        <attribute name="clv_obra" optional="YES" attributeType="String"/>
+        <attribute name="clv_viga" optional="YES" attributeType="String"/>
+        <attribute name="longitud" optional="YES" attributeType="String"/>
+        <attribute name="material" optional="YES" attributeType="String"/>
+        <attribute name="peso" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Viga" positionX="-63" positionY="-18" width="128" height="104"/>
+    </elements>
+</model>

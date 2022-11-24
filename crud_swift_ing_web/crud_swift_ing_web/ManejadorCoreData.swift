@@ -20,4 +20,19 @@ class ManejadorCoreData{
             }
         })
     }
+    func guardarViga(clv_obra:String,clv_viga:String,longitud:String,material:String,peso:String){
+        
+    }
+    func leerTodasLasVigas()-> [Viga]{
+        let fetchRequest:NSFetchRequest<Viga>=Viga.fetchRequest()
+        do{
+            return try persistentContainer.viewContext.fetch(fetchRequest)
+        }
+        catch{
+            return []
+        }
+    }
+    func borrarViga(arrayvigas : Viga){
+        
+    }
 }
