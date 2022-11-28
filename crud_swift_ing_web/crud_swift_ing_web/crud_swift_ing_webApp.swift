@@ -9,12 +9,11 @@ import SwiftUI
 
 @main
 struct crud_swift_ing_webApp: App {
-    let persistenceController = PersistenceController.shared
+    
 
     var body: some Scene {
         WindowGroup {
-            ContentView(vigas)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView(coreDM: <#T##ManejadorCoreData#>)
         }
         
     }
