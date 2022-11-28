@@ -10,10 +10,9 @@ import SwiftUI
 @main
 struct crud_swift_ing_webApp: App {
     
-
     var body: some Scene {
         WindowGroup {
-            ContentView(coreDM: <#T##ManejadorCoreData#>)
+            ContentView(coreDM: ManejadorCoreData())
         }
         
     }

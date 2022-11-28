@@ -51,7 +51,9 @@ struct ContentView: View {
                 {
                     Text("Agregar")
                 }
-
+                Button("Actulizar"){
+                    coreDM.actualizarViga(laviga: <#T##Viga#>)
+                }
                 List{
                     ForEach(vigaArray,id:\.self){
                         Vigas in
