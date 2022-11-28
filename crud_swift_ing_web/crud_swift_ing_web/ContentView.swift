@@ -62,7 +62,7 @@ struct ContentView: View {
                         indexSet in
                         indexSet.forEach({ index in
                         let vigaz = vigaArray[index]
-                            coreDM.borrarViga(Viga: vigaz)
+                            coreDM.borrarViga(vigas: <#T##Viga#>)
                         mostrarProductos()
                         })
                     })

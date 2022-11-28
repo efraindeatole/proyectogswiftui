@@ -13,7 +13,7 @@ struct crud_swift_ing_webApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(vigas)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         
