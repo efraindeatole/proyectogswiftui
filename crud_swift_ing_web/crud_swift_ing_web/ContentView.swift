@@ -40,6 +40,10 @@ struct ContentView: View {
                     Button("Guardar"){
                         coreDM.guardarViga(clv_obra:newclv_obra, clv_viga: newclv_viga, longitud: newlongitud,material:newmaterial,peso:newpeso)
                         newclv_obra=""
+                        newmaterial=""
+                        newclv_viga=""
+                        newlongitud=""
+                        newpeso=""
                         
                         mostrarProductos()
                     }
@@ -61,8 +65,8 @@ struct ContentView: View {
                     }.onDelete(perform: {
                         indexSet in
                         indexSet.forEach({ index in
-                        let vigaz = vigaArray[index]
-                            coreDM.borrarViga(vigas: <#T##Viga#>)
+                        let vigao = vigaArray[index]
+                            coreDM.borrarViga(vigas: vigao)
                         mostrarProductos()
                         })
                     })
