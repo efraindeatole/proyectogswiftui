@@ -25,17 +25,18 @@ struct ContentView: View {
     @State var newpeso = ""
     @State var seleccionado: Viga?
     @State var vigaArray = [Viga]()
-
+    @State var picando=false
 
     var body: some View {
         NavigationView{
             VStack{
                 NavigationLink(destination: VStack{
-                    TextField("clave obra", text: self.$newclv_obra).multilineTextAlignment(.center)
-                    TextField("clave viga", text: self.$newclv_viga).multilineTextAlignment(.center)
-                    TextField("longitud", text: self.$newlongitud).multilineTextAlignment(.center)
-                    TextField("material", text: self.$newmaterial).multilineTextAlignment(.center)
-                    TextField("peso", text: self.$newpeso).multilineTextAlignment(.center)
+                    TextField("clave obra", text: self.$newclv_obra).textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("clave viga", text: self.$newclv_viga).textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("longitud", text: self.$newlongitud).textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("material", text: self.$newmaterial).textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("peso", text:
+                                self.$newpeso).textFieldStyle(RoundedBorderTextFieldStyle())
 
                     Button("Guardar"){
                         coreDM.guardarViga(clv_obra:newclv_obra, clv_viga: newclv_viga, longitud: newlongitud,material:newmaterial,peso:newpeso)
@@ -47,13 +48,12 @@ struct ContentView: View {
                         
                         mostrarProductos()
                     }
-                    })
+                }.padding())
                 {
                     Text("Agregar")
                 }
-                Button("Actulizar"){
-                    coreDM.actualizarViga(laviga: <#T##Viga#>)
-                }
+                
+                
                 List{
                     ForEach(vigaArray,id:\.self){
                         Vigas in
@@ -63,6 +63,11 @@ struct ContentView: View {
                         .onTapGesture{
                             seleccionado = Vigas
                             clv_viga = Vigas.clv_viga ?? ""
+                            clv_obra=Vigas.clv_obra ?? ""
+                            material=Vigas.material ?? ""
+                            longitud=Vigas.longitud ?? ""
+                            peso=Vigas.peso ?? ""
+                            picando.toggle()
                         }
                     }.onDelete(perform: {
                         indexSet in
@@ -74,15 +79,48 @@ struct ContentView: View {
                     })
                 }.padding()
                     .onAppear(perform: {mostrarProductos()})
+            
+            NavigationLink("",destination: VStack{
+                TextField("clave obra", text: self.$clv_obra).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("clave viga", text: self.$clv_viga).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("longitud", text:
+                            self.$longitud).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("material", text:
+                            self.$material).textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("peso", text:
+                            self.$peso).textFieldStyle(RoundedBorderTextFieldStyle())
+                Button("Actualizar"){
+                    seleccionado?.clv_viga=clv_viga
+                    seleccionado?.clv_obra=clv_obra
+                    seleccionado?.longitud=longitud
+                    seleccionado?.material=material
+                    seleccionado?.peso=peso
+                    coreDM.actualizarViga(laviga: seleccionado!)
+                    clv_viga=""
+                    clv_obra=""
+                    material=""
+                    peso=""
+                    longitud=""
+                    mostrarProductos()
+                }
+                
+            },isActive: $picando)
+        }
+    }
+}
+    func mostrarProductos(){
+        vigaArray=coreDM.leerTodasLasVigas()
+    }
+}
+
+
+       
+struct ContentView_Previews: PreviewProvider {
+            static var previews: some View {
+                ContentView(coreDM: ManejadorCoreData())
             }
         }
-    }
-    func mostrarProductos(){
-        vigaArray = coreDM.leerTodasLasVigas()
-        }
-}
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(coreDM: ManejadorCoreData())
-    }
-}
+
+    
+
+

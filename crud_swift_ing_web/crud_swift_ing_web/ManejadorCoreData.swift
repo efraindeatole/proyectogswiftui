@@ -12,7 +12,7 @@ class ManejadorCoreData{
     let persistentContainer: NSPersistentContainer
 
     init(){
-        persistentContainer = NSPersistentContainer(name: "Viga")
+        persistentContainer = NSPersistentContainer(name: "Vigas")
         persistentContainer.loadPersistentStores(completionHandler:{
             (descripcion, error) in
             if let error = error {
